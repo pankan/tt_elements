@@ -1,0 +1,14 @@
+<h1>View Tweets</h1>
+
+<p>
+  <strong>Name :</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Access secret:</strong>
+ <%=	@user.arr	%>
+</p>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
