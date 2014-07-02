@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>timetrain Home</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <script src="./assets/js/vis.js"></script>
+    <script src="./assets/js/train.js"></script>
+    <link href="./assets/css/vis.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Social networks inegrated viewer">
+    <meta name="author" content="timetrain">
+  </head>
+  <body>
+    <img style="height: 80px;" src="./assets/img/logo_white.png"></img>
+    <div id="visualization">
+      <div class="menu">
+            <input type="button" id="zoomIn" value="Zoom in"/>
+            <input type="button" id="zoomOut" value="Zoom out"/>
+            <input type="button" id="moveLeft" value="Move left"/>
+            <input type="button" id="moveRight" value="Move right"/>
+            <input type="button" id="reset" value="Reset"/>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+      // DOM element where the Timeline will be attached
+      var container = document.getElementById('visualization');
+
+      // Create a json evnt data set
+      var items = new vis.DataSet([
+        {id: 1, content: "", start: '2008-04-20', type: 'tpoint'},
+        {id: 2, content: "", start: '2010-04-14', type: 'fpoint'},
+        {id: 3, content: "", start: '2011-04-18', type: 'gpoint'},
+        {id: 4, content: "", start: '2011-04-18', type: 'tpoint'},
+        {id: 5, content: "", start: '2011-04-19', type: 'gpoint'},
+        {id: 6, content: "", start: '2011-04-20', type: 'fpoint'},
+        {id: 7, content: "", start: '2011-04-21', type: 'gpoint'},
+        {id: 8, content: "", start: '2011-04-22', type: 'tpoint'},
+      ]);
+
+
+      // Create a Timeline
+      var timeline = new vis.Timeline(container, items, options);
+
+        // attach events to the navigation buttons
+        document.getElementById('zoomIn').onclick    = function () { zoom(-0.2); };
+        document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
+        document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
+        document.getElementById('moveRight').onclick = function () { move(-0.2); };
+        document.getElementById('reset').onclick     = function () { window.location.reload(); };
+    </script>
+  </body>
+  <!-- Footer -->
+    <div id="footer">
+        <p>&copy 2014 timetrain    |
+          <a href="#">Home</a>     | 
+          <a href="#">About</a>    |
+          <a href="#">Settings</a> | 
+          <a href="#">Contact</a>  | 
+          <a href="#">Help</a>
+        </p>
+    </div>
+</html>
