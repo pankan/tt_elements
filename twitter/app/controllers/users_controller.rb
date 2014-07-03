@@ -12,12 +12,10 @@ class UsersController < ApplicationController
   def show
   end
 
-def update
+  def update
     @user.arr = @user.tweet(@user.tweet_message)
-
-     render :edit
-
-end
+    render :edit
+  end
   
 
   # GET /users/new

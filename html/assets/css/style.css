@@ -127,7 +127,7 @@ button:active {
     border: 0px solid #ef4300;
 }
 
-.error {
+.error, .valid {
     display: none;
     position: absolute;
     top: 27px;

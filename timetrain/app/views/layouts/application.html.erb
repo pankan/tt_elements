@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Timetrain</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>timetrain Login</title>
+	  <%= favicon_link_tag 'favicon.ico' %>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<%= yield %>
+	<%= yield %>
 
-</body>
+	</body>
+<!-- Footer -->
+  <div id="footer">
+    <p>&copy 2014 timetrain   | 
+      <a href="#">About</a>   | 
+      <a href="#">Contact</a> | 
+      <a href="#">Help</a>
+    </p>
+  </div>
 </html>

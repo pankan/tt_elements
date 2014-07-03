@@ -45,13 +45,6 @@ ActiveRecord::Schema.define(version: 20140702113204) do
   add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
 
-  create_table "twiiters", force: true do |t|
-    t.string   "urls"
-    t.datetime "create_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "twitters", force: true do |t|
     t.string   "urls"
     t.datetime "create_date"

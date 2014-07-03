@@ -5,10 +5,14 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Access secret:</strong>
- <%=	@user.arr	%>
-</p>
+  <strong>tweets</strong>
+ <%	@user.arr.each do |tweet_url|	%>
+ <div>
+ <blockquote class="twitter-tweet" lang="en">
+ 	<a href="<%=tweet_url%>">
+ </blockquote>
+</div>
+ <% end %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
