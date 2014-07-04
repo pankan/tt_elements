@@ -1,7 +1,8 @@
 class Twitter < ActiveRecord::Base
-  belongs_to :members
+#   belongs_to :member
 
-	
+
+
 end
 
 

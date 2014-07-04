@@ -7,8 +7,4 @@ class ApplicationController < ActionController::Base
   	members_timeline_path
   end
 
-
-
-
-
 end

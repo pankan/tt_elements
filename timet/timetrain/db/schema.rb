@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702113204) do
+ActiveRecord::Schema.define(version: 20140704100641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140702113204) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
+    t.string   "post_link"
   end
 
   create_table "members", force: true do |t|
@@ -48,6 +49,14 @@ ActiveRecord::Schema.define(version: 20140702113204) do
   create_table "twiiters", force: true do |t|
     t.string   "urls"
     t.datetime "create_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitter_models", force: true do |t|
+    t.string   "urls"
+    t.datetime "create_date"
+    t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
