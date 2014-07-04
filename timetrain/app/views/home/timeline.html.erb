@@ -1,5 +1,40 @@
-<p>hi Welcome to timetrain. you have successfully registered your account.</p>
+<%= image_tag("logo_white.png", class: "logo") %>
+<div class="menu">
+    <input type="button" id="zoomIn" title="Zoom in"/>
+    <input type="button" id="zoomOut" title="Zoom out"/>
+    <input type="button" id="moveLeft" title="Move left"/>
+    <input type="button" id="moveRight" title="Move right"/>
+    <input type="button" id="reset" title="Refresh timeline"/>
+</div>
+<div id="visualization"></div>
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a json evnt data set
+  var items = new vis.DataSet([
+    {id: 1, content: "", start: '2008-04-20', type: 'tpoint'},
+    {id: 2, content: "", start: '2010-04-14', type: 'fpoint'},
+    {id: 3, content: "", start: '2011-04-18', type: 'gpoint'},
+    {id: 4, content: "", start: '2011-04-18', type: 'tpoint'},
+    {id: 5, content: "", start: '2011-04-19', type: 'gpoint'},
+    {id: 6, content: "", start: '2011-04-20', type: 'fpoint'},
+    {id: 7, content: "", start: '2011-04-21', type: 'gpoint'},
+    {id: 8, content: "", start: '2011-04-22', type: 'tpoint'},
+  ]);
 
 
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
 
-<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+    // attach events to the navigation buttons
+    document.getElementById('zoomIn').onclick    = function () { zoom(-0.2); };
+    document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
+    document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
+    document.getElementById('moveRight').onclick = function () { move(-0.2); };
+    document.getElementById('reset').onclick     = function () { window.location.reload(); };
+</script>
+
+<div class="signup">
+	<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+</div>

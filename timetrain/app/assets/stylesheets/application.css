@@ -8,7 +8,7 @@ body {
 }
 
 .page-container {
-    margin: 100px auto 0 auto;
+    margin: 60px auto 0 auto;
 }
 img.logo{
     width: 305px;
@@ -281,7 +281,6 @@ a.gplus:active {
     background-position: -60px 0; }
 
 #footer{
-  font-size: 10px;
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -297,17 +296,55 @@ a.gplus:active {
     text-decoration: none;
     color: #fff;
 }
+#visualization{
+    margin-top: 60px;
+}
+.menu{ width: 100%; }
 .menu input{
+    background: url(nav_icons.svg) no-repeat;
+    opacity: 0.5;
+    background-size: 200px 40px;
     cursor: pointer;
     font-size: 8px;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin-top: 25px;
     padding: 0;
+    border:0;
+    box-shadow: none;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
 }
+.menu input:hover{
+    opacity: 1;
+}
+.menu input#zoomIn{ 
+    background-position: 0 0;
+    position: fixed;
+    top: 90px;
+    right: 100px; }
+.menu input#zoomOut{ 
+    background-position: -40px 0;
+    position: fixed;
+    top: 90px;
+    right: 50px; }
+.menu input#moveLeft{ 
+    background-position: -80px 0;
+    position: fixed;
+    top: 90px;
+    left: 5px; }
+.menu input#moveRight{ 
+    background-position: -120px 0;
+    position: fixed;
+    top: 90px;
+    right: 5px; }
+.menu input#reset{ 
+    background-position: -160px 0;
+    position: fixed;
+    top: 90px;
+    left: 55px; }
+
 
 .check_box input, .check_box label{
 	display: inline-block;
@@ -365,3 +402,4 @@ a.gplus:active {
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: rgba(255,255,255,0.7);
 }
+
