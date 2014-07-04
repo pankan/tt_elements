@@ -6,21 +6,34 @@
     <input type="button" id="moveRight" title="Move right"/>
     <input type="button" id="reset" title="Refresh timeline"/>
 </div>
+
 <div id="visualization"></div>
 <script type="text/javascript">
+	//render gpost widget
+	function renderWidget() {
+        gapi.post.render("widget-div", {'href' : 'https://plus.google.com/108555491400912033402/posts/L1zEnkTpEy4'} );
+     }
+
+     function rendertweet() {
+     	var e = document.getElementById('widget-tweet');
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+     }
+
+      //html ele cre
+      var item7 = '<a onclick="renderWidget();">post</a>';
+      var item8 = '<a onclick="rendertweet();">tweet</a>';
+
+
   // DOM element where the Timeline will be attached
   var container = document.getElementById('visualization');
 
   // Create a json evnt data set
   var items = new vis.DataSet([
-    {id: 1, content: "", start: '2008-04-20', type: 'tpoint'},
-    {id: 2, content: "", start: '2010-04-14', type: 'fpoint'},
-    {id: 3, content: "", start: '2011-04-18', type: 'gpoint'},
-    {id: 4, content: "", start: '2011-04-18', type: 'tpoint'},
-    {id: 5, content: "", start: '2011-04-19', type: 'gpoint'},
-    {id: 6, content: "", start: '2011-04-20', type: 'fpoint'},
-    {id: 7, content: "", start: '2011-04-21', type: 'gpoint'},
-    {id: 8, content: "", start: '2011-04-22', type: 'tpoint'},
+    {id: 7, content: item8, start: '2014-06-20', type: 'tpoint'},
+    {id: 8, content: item7, start: '2014-06-27', type: 'gpoint'},
   ]);
 
 
@@ -35,6 +48,10 @@
     document.getElementById('reset').onclick     = function () { window.location.reload(); };
 </script>
 
+<div id="widget-div"></div>
+<div id="widget-tweet">
+	<blockquote class="twitter-tweet" width="100"><a href="https://twitter.com/beautevildesign/statuses/479915045619372032"></a></blockquote>
+</div>
 <div class="signup">
 	<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
 </div>
