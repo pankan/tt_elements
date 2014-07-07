@@ -14,7 +14,7 @@ def create
 end
 
 def social_sign_up
-#	redirect_to members_timeline_path
+
 end
 
 private

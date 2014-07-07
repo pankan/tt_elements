@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704100641) do
+ActiveRecord::Schema.define(version: 20140707085209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "google_models", force: true do |t|
+    t.string   "member_id"
+    t.string   "urls"
+    t.string   "create_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "googleplus", force: true do |t|
     t.string   "urls"

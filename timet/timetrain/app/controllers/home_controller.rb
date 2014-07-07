@@ -25,7 +25,7 @@ class HomeController < ApplicationController
 	auth = request.env["omniauth.auth"]
 	current_member.gplus_id = auth["uid"]
 	current_member.save
-	Googleplus.store_urls(auth.credentials.token,current_member.gplus_id,current_member )
+	GoogleModel.store_urls(auth.credentials.token,current_member.gplus_id,current_member )
 	redirect_to members_social_sign_up_path	
   end
 
