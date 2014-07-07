@@ -8,11 +8,14 @@ body {
 }
 
 .page-container {
-    margin: 100px auto 0 auto;
+    margin: 60px auto 0 auto;
 }
 img.logo{
     width: 305px;
-    shadow: 10px 10px 5px #888888;
+}
+
+img.big_logo{
+    width: 50%;
 }
 
 h1 {
@@ -127,7 +130,7 @@ button:active {
     border: 0px solid #ef4300;
 }
 
-.error {
+.error, .valid {
     display: none;
     position: absolute;
     top: 27px;
@@ -158,13 +161,17 @@ button:active {
 .signup, .notice {
     width: 305px;
     margin: 35px auto 0 auto;
-    font-size: 16px;
     font-weight: 700;
     text-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
-
+.notice{
+	font-size: 16px;
+}
+.signup{
+	font-size: 14px;
+}
 .signup a {
-    display: inline-block;
+    display: inline;
     width: 305px;
     height: 35px;
     margin-top: 15px;
@@ -274,7 +281,6 @@ a.gplus:active {
     background-position: -60px 0; }
 
 #footer{
-  font-size: 10px;
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -290,30 +296,109 @@ a.gplus:active {
     text-decoration: none;
     color: #fff;
 }
+#visualization{
+    margin-top: 60px;
+}
+.menu{ width: 100%; }
 .menu input{
+    background: url(nav_icons.svg) no-repeat;
+    opacity: 0.5;
+    background-size: 200px 40px;
     cursor: pointer;
     font-size: 8px;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin-top: 25px;
     padding: 0;
-    border: 1px solid #fff;
-    background-color: none;
+    border:0;
+    box-shadow: none;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-}/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+}
+.menu input:hover{
+    opacity: 1;
+}
+.menu input#zoomIn{ 
+    background-position: 0 0;
+    position: fixed;
+    top: 90px;
+    right: 100px; }
+.menu input#zoomOut{ 
+    background-position: -40px 0;
+    position: fixed;
+    top: 90px;
+    right: 50px; }
+.menu input#moveLeft{ 
+    background-position: -80px 0;
+    position: fixed;
+    top: 90px;
+    left: 5px; }
+.menu input#moveRight{ 
+    background-position: -120px 0;
+    position: fixed;
+    top: 90px;
+    right: 5px; }
+.menu input#reset{ 
+    background-position: -160px 0;
+    position: fixed;
+    top: 90px;
+    left: 55px; }
+
+
+.check_box input, .check_box label{
+	display: inline-block;
+    height: 12px;
+    width: 20px;
+    font-size: 14px;
+	cursor:pointer;
+}
+.check_box label{
+	width: 200px;
+}
+
+#error_explanation {
+  width: 287px;
+  border: 2px solid #FF6666;
+  -webkit-border-radius:6px;
+     -moz-border-radius:6px;
+          border-radius:6px;
+  padding: 7px;
+  padding-bottom: 0;
+  background-color: none;
+}
+
+#error_explanation h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 14px;
+  margin: -7px;
+  background-color: #FF6666;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 13px;
+  list-style: circle;
+  text-align: left;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(255,255,255,0.7);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: rgba(255,255,255,0.7);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: rgba(255,255,255,0.7);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: rgba(255,255,255,0.7);
+}

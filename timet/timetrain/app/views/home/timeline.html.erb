@@ -1,4 +1,58 @@
-<p>hi welcome to Timetrain. you have successfully registered your account.</p>
-<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+<%= image_tag("logo_white.png", class: "logo") %>
+<div class="menu">
+    <input type="button" id="zoomIn" title="Zoom in"/>
+    <input type="button" id="zoomOut" title="Zoom out"/>
+    <input type="button" id="moveLeft" title="Move left"/>
+    <input type="button" id="moveRight" title="Move right"/>
+    <input type="button" id="reset" title="Refresh timeline"/>
+</div>
 
-<%= link_to "Social Signup", members_social_sign_up_path  %>
+<div id="visualization"></div>
+<script type="text/javascript">
+	//render gpost widget
+	function renderWidget() {
+        gapi.post.render("widget-div", {'href' : 'https://plus.google.com/108555491400912033402/posts/L1zEnkTpEy4'} );
+     }
+
+     function rendertweet() {
+     	var e = document.getElementById('widget-tweet');
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+     }
+
+      //html ele cre
+      var item7 = '<a onclick="renderWidget();">post</a>';
+      var item8 = '<a onclick="rendertweet();">tweet</a>';
+
+
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a json evnt data set
+  var items = new vis.DataSet([
+    <% @member.twitter_models.each do |post| %>
+    {id: <%= post.id %>, content: "<%= post.urls %>", start: <%= post.create_date %>, type: 'tpoint'},
+    <% end %>
+ ]);
+
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+
+    // attach events to the navigation buttons
+    document.getElementById('zoomIn').onclick    = function () { zoom(-0.2); };
+    document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
+    document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
+    document.getElementById('moveRight').onclick = function () { move(-0.2); };
+    document.getElementById('reset').onclick     = function () { window.location.reload(); };
+</script>
+
+<div id="widget-div"></div>
+<div id="widget-tweet">
+	<blockquote class="twitter-tweet" width="100"><a href="https://twitter.com/beautevildesign/statuses/479915045619372032"></a></blockquote>
+</div>
+<div class="signup">
+	<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+</div>

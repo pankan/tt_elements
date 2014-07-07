@@ -2,7 +2,7 @@
 var options = {
   height: '300px',
   min: new Date(2008, 0, 1),                // lower limit of visible range
-  max: new Date(2014, 6, 1),                // upper limit of visible range
+  max: new Date(2014, 8, 1),                // upper limit of visible range
 };
 
 

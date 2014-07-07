@@ -5,6 +5,6 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :twitter_models , dependent: :destroy
-  has_many :googleplus , dependent: :destroy
+  has_many :googlepluss , dependent: :destroy
 
 end
