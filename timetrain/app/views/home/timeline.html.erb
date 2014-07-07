@@ -6,40 +6,48 @@
     <input type="button" id="moveRight" title="Move right"/>
     <input type="button" id="reset" title="Refresh timeline"/>
 </div>
-
+ 
 <div id="visualization"></div>
 <script type="text/javascript">
-	//render gpost widget
-	function renderWidget() {
-        gapi.post.render("widget-div", {'href' : 'https://plus.google.com/108555491400912033402/posts/L1zEnkTpEy4'} );
-     }
-
-     function rendertweet() {
-     	var e = document.getElementById('widget-tweet');
-       if(e.style.display == 'block')
-          e.style.display = 'none';
+        //render gpost widget
+      function renderpost() {
+      var p = document.getElementById('widget-post');
+       if(p.style.display == 'block')
+          p.style.display = 'none';
        else
-          e.style.display = 'block';
+          p.style.display = 'block';
      }
-
+ 
+     function rendertweet(id) {
+        var t = document.getElementById('id');
+       if(t.style.display == 'block')
+          t.style.display = 'none';
+       else
+          t.style.display = 'block';
+     }
+ 
       //html ele cre
-      var item7 = '<a onclick="renderWidget();">post</a>';
+      var item7 = '<a onclick="renderpost();">post</a>';
       var item8 = '<a onclick="rendertweet();">tweet</a>';
-
-
+ 
+ 
   // DOM element where the Timeline will be attached
   var container = document.getElementById('visualization');
-
+ 
   // Create a json evnt data set
   var items = new vis.DataSet([
-    {id: 7, content: item8, start: '2014-06-20', type: 'tpoint'},
-    {id: 8, content: item7, start: '2014-06-27', type: 'gpoint'},
+    <% current_member.google_models.each do |post| %>
+    {id: <%= post.id %>, content: "<a onclick='renderpost();'> </a>", start: '<%= post.create_date %>', type: 'gpoint'},
+    <% end %>
+    <% current_member.twitter_models.each do |post| %>
+    {id: <%= post.id+10 %>, content: "<a onclick='rendertweet(<%= post.id %>);'> </a>", start: '2014-06-30T05:10:56.080Z', type: 'tpoint'},
+    <% end %>
   ]);
-
-
+ 
+ 
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, options);
-
+ 
     // attach events to the navigation buttons
     document.getElementById('zoomIn').onclick    = function () { zoom(-0.2); };
     document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
@@ -47,11 +55,20 @@
     document.getElementById('moveRight').onclick = function () { move(-0.2); };
     document.getElementById('reset').onclick     = function () { window.location.reload(); };
 </script>
+ 
+<div class="widgets">
+  <% current_member.twitter_models.each do |post| %>
+  <div id="<%= post.id %>">
+    <blockquote class="twitter-tweet" width="350"><a href="<%= post.urls %>"></a></blockquote>
+  </div>
+  <% end %>
 
-<div id="widget-div"></div>
-<div id="widget-tweet">
-	<blockquote class="twitter-tweet" width="100"><a href="https://twitter.com/beautevildesign/statuses/479915045619372032"></a></blockquote>
+  <% current_member.google_models.each do |post| %>
+  <div id="<%= post.id %>">
+    <div class="g-post" data-href="<%= post.urls %>"></div>
+  </div>
+  <% end %>
 </div>
 <div class="signup">
-	<%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+  <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
 </div>

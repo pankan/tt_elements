@@ -402,3 +402,6 @@ a.gplus:active {
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: rgba(255,255,255,0.7);
 }
+.widgets{
+    width: 450px;
+}

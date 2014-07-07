@@ -15431,3 +15431,395 @@ Started GET "/auth/twitter" for 10.3.0.206 at 2014-07-01 14:21:37 +0530
 
 
 Started GET "/auth/twitter" for 10.3.0.206 at 2014-07-01 14:21:40 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-07-07 09:33:25.569011"], ["updated_at", "2014-07-07 09:33:25.569011"]]
+  [1m[35m (86.5ms)[0m  commit transaction
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 152ms (Views: 43.2ms | ActiveRecord: 87.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:25 +0530
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2014-07-07 15:03:27 +0530
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2014-07-07 15:03:28 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=jeqRd09LrZMpzn77qkK2N6MTgiLL5BbzFMtDWc2uac&oauth_verifier=W7drAmcBWCTwG8VZArnurQOeNZeRNxVcCTTxW0kgAn0" for 127.0.0.1 at 2014-07-07 15:03:32 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"oauth_token"=>"jeqRd09LrZMpzn77qkK2N6MTgiLL5BbzFMtDWc2uac", "oauth_verifier"=>"W7drAmcBWCTwG8VZArnurQOeNZeRNxVcCTTxW0kgAn0", "twitter"=>"twitter"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("access_secret", "access_token", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_secret", "Tw6r7axZFlj9MGQ5iIHNowB65r0fpsBj2CvGWivGae4zr"], ["access_token", "2578329510-MwSq7VZeBGzQyNnCfsDd8eXIH0vDbmP4N7KAj4V"], ["created_at", "2014-07-07 09:33:34.584441"], ["name", "Pankan"], ["updated_at", "2014-07-07 09:33:34.584441"]]
+  [1m[36m (96.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3004/users/158
+Completed 302 Found in 101ms (ActiveRecord: 97.1ms)
+
+
+Started GET "/users/158" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"158"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 158]]
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:34 +0530
+
+
+Started PATCH "/users/158" for 127.0.0.1 at 2014-07-07 15:03:36 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Psh/7LlD+umOeu65RSn+mDS82w1A2RoIhW3MqfA9X84=", "commit"=>"View Tweets", "id"=>"158"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 158]]
+  Rendered users/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1337ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:03:37 +0530
+
+
+Started GET "/users/158.json" for 127.0.0.1 at 2014-07-07 15:05:09 +0530
+Processing by UsersController#show as JSON
+  Parameters: {"id"=>"158"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 158]]
+  Rendered users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+Processing by UsersController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-07-07 09:47:55.173019"], ["updated_at", "2014-07-07 09:47:55.173019"]]
+  [1m[36m (113.8ms)[0m  [1mcommit transaction[0m
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 122ms (Views: 5.4ms | ActiveRecord: 114.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:17:55 +0530
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2014-07-07 15:17:58 +0530
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2014-07-07 15:17:59 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=vVulXJNnIeTl42iDO8ayk1NN6KeTmwR1IcYIFwflq7U&oauth_verifier=bVTsYSIotJYk0zyK6fo2qtaNnE6iSSnJzeybWlKWSc" for 127.0.0.1 at 2014-07-07 15:18:05 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"oauth_token"=>"vVulXJNnIeTl42iDO8ayk1NN6KeTmwR1IcYIFwflq7U", "oauth_verifier"=>"bVTsYSIotJYk0zyK6fo2qtaNnE6iSSnJzeybWlKWSc", "twitter"=>"twitter"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("access_secret", "access_token", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["access_secret", "Tw6r7axZFlj9MGQ5iIHNowB65r0fpsBj2CvGWivGae4zr"], ["access_token", "2578329510-MwSq7VZeBGzQyNnCfsDd8eXIH0vDbmP4N7KAj4V"], ["created_at", "2014-07-07 09:48:07.677941"], ["name", "Pankan"], ["updated_at", "2014-07-07 09:48:07.677941"]]
+  [1m[35m (102.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3004/users/160
+Completed 302 Found in 106ms (ActiveRecord: 103.1ms)
+
+
+Started GET "/users/160" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"160"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 160]]
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:07 +0530
+
+
+Started PATCH "/users/160" for 127.0.0.1 at 2014-07-07 15:18:09 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Psh/7LlD+umOeu65RSn+mDS82w1A2RoIhW3MqfA9X84=", "commit"=>"View Tweets", "id"=>"160"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 160]]
+  Rendered users/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1352ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-07-07 15:18:11 +0530
+
+
+Started GET "/users/160.json" for 127.0.0.1 at 2014-07-07 15:18:17 +0530
+Processing by UsersController#show as JSON
+  Parameters: {"id"=>"160"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 160]]
+  Rendered users/show.json.jbuilder (0.4ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-07-07 10:24:06.036787"], ["updated_at", "2014-07-07 10:24:06.036787"]]
+  [1m[35m (95.9ms)[0m  commit transaction
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 102ms (Views: 4.7ms | ActiveRecord: 96.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/sessions.css?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/users.css?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/application.css?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/sessions.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/users.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 10.3.0.16 at 2014-07-07 15:54:06 +0530
+
+
+Started GET "/auth/twitter" for 10.3.0.16 at 2014-07-07 15:54:18 +0530
+
+
+Started GET "/auth/twitter" for 10.3.0.16 at 2014-07-07 15:54:21 +0530
+
+
+Started GET "/auth/twitter/callback?oauth_token=tRJV3dgug54TdjfDPThwuSjCBFUbFclElort54ers&oauth_verifier=pV73wiBuQFs1HUiPGuXdWIpqjq3HJwJdo3QGIClQ40s" for 10.3.0.16 at 2014-07-07 15:54:36 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"oauth_token"=>"tRJV3dgug54TdjfDPThwuSjCBFUbFclElort54ers", "oauth_verifier"=>"pV73wiBuQFs1HUiPGuXdWIpqjq3HJwJdo3QGIClQ40s", "twitter"=>"twitter"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("access_secret", "access_token", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["access_secret", "Tw6r7axZFlj9MGQ5iIHNowB65r0fpsBj2CvGWivGae4zr"], ["access_token", "2578329510-MwSq7VZeBGzQyNnCfsDd8eXIH0vDbmP4N7KAj4V"], ["created_at", "2014-07-07 10:24:38.551492"], ["name", "Pankan"], ["updated_at", "2014-07-07 10:24:38.551492"]]
+  [1m[36m (93.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://10.3.0.205:3004/users/162
+Completed 302 Found in 97ms (ActiveRecord: 94.3ms)
+
+
+Started GET "/users/162" for 10.3.0.16 at 2014-07-07 15:54:38 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"162"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 162]]
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/users/162" for 10.3.0.16 at 2014-07-07 15:54:40 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZB7VcTYku5i/2XwdfI40hhkNow5DIlGY0AeL7EjxEQ=", "commit"=>"View Tweets", "id"=>"162"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 162]]
+  Rendered users/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1337ms (Views: 7.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for 10.3.0.16 at 2014-07-07 15:54:58 +0530
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (35.0ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 124ms (Views: 87.7ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/users/86" for 10.3.0.16 at 2014-07-07 15:55:04 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 86]]
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/86" for 10.3.0.16 at 2014-07-07 15:55:05 +0530
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hZB7VcTYku5i/2XwdfI40hhkNow5DIlGY0AeL7EjxEQ=", "commit"=>"View Tweets", "id"=>"86"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 86]]
+  Rendered users/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1458ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/86" for 10.3.0.16 at 2014-07-07 15:55:35 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"86"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 86]]
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms)

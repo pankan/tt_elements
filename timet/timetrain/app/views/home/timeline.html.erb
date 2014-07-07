@@ -18,8 +18,8 @@
           p.style.display = 'block';
      }
  
-     function rendertweet() {
-        var t = document.getElementById('widget-tweet');
+     function rendertweet(id) {
+        var t = document.getElementById('id');
        if(t.style.display == 'block')
           t.style.display = 'none';
        else
@@ -36,8 +36,12 @@
  
   // Create a json evnt data set
   var items = new vis.DataSet([
-    {id: 7, content: item8, start: '2014-06-20', type: 'tpoint'},
-    {id: 8, content: item7, start: '2014-06-27', type: 'gpoint'},
+    <% current_member.google_models.each do |post| %>
+    {id: <%= post.id %>, content: "<a onclick='renderpost();'> </a>", start: '<%= post.create_date %>', type: 'gpoint'},
+    <% end %>
+    <% current_member.twitter_models.each do |post| %>
+    {id: <%= post.id+10 %>, content: "<a onclick='rendertweet(<%= post.id %>);'> </a>", start: '2014-06-30T05:10:56.080Z', type: 'tpoint'},
+    <% end %>
   ]);
  
  
@@ -52,13 +56,19 @@
     document.getElementById('reset').onclick     = function () { window.location.reload(); };
 </script>
  
-<!-- <div id="widget-div"></div> -->
-<div id="widget-tweet">
-        <blockquote class="twitter-tweet" width="100"><a href="https://twitter.com/beautevildesign/statuses/479915045619372032"></a></blockquote>
-</div>
-<div id="widget-post">
-<div class="g-post" data-href="https://plus.google.com/100389317156370398713/posts/VNQGpio4eEP"></div>
+<div class="widgets">
+  <% current_member.twitter_models.each do |post| %>
+  <div id="<%= post.id %>">
+    <blockquote class="twitter-tweet" width="350"><a href="<%= post.urls %>"></a></blockquote>
+  </div>
+  <% end %>
+
+  <% current_member.google_models.each do |post| %>
+  <div id="<%= post.id %>">
+    <div class="g-post" data-href="<%= post.urls %>"></div>
+  </div>
+  <% end %>
 </div>
 <div class="signup">
-        <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+  <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
 </div>

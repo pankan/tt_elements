@@ -4,9 +4,7 @@ class Member < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-has_one :twitter , dependent: :destroy
+  has_many :twitter_models , dependent: :destroy
+  has_many :google_models , dependent: :destroy
 
-has_one :googleplus , dependent: :destroy
-
-  
 end
