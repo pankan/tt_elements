@@ -14,7 +14,7 @@ def create
 end
 
 def social_sign_up
-
+  @user = current_member
 end
 
 private

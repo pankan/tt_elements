@@ -46,13 +46,13 @@
     <% end %>
     {id: 8, content: item7, start: '2014-06-27', type: 'gpoint'},
 =======
-    <% current_member.google_models.each do |post| %>
+    <% @current_member.google_models.each do |post| %>
     {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date %>', type: 'gpoint'},
     <% end %>
-    <% current_member.twitter_models.each do |post| %>
+    <% @current_member.twitter_models.each do |post| %>
     {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date.to_s[0...10]+ "T" + post.create_date.to_s[11...19] + "Z" %>', type: 'tpoint'},
     <% end %>
->>>>>>> 65bc43e4e5c51ffcfaeb88d794ef5909cceb9566
+
   ]);
  
  

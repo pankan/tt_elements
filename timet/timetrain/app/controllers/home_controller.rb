@@ -14,19 +14,21 @@ class HomeController < ApplicationController
   end
 
   def connect_twitter
-	auth = request.env["omniauth.auth"]
-	current_member.twitter_id = auth["uid"]
-	current_member.save
-	TwitterModel.store_urls(auth,current_member)
-	redirect_to members_social_sign_up_path
+    if current_member.twitter_id.blank?
+      auth = request.env["omniauth.auth"]
+      current_member.twitter_id = auth["uid"]
+	    current_member.save
+	    TwitterModel.store_urls(auth,current_member)
+	  end
+    redirect_to members_social_sign_up_path
   end
 
   def connect_gplus
-	auth = request.env["omniauth.auth"]
-	current_member.gplus_id = auth["uid"]
-	current_member.save
-	GoogleModel.store_urls(auth.credentials.token,current_member.gplus_id,current_member )
-	redirect_to members_social_sign_up_path	
+	  auth = request.env["omniauth.auth"]
+	  current_member.gplus_id = auth["uid"]
+	  current_member.save
+	  GoogleModel.store_urls(auth.credentials.token,current_member.gplus_id,current_member )
+	  redirect_to members_social_sign_up_path	
   end
 
 end
