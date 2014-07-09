@@ -16,7 +16,6 @@ class TwitterModel < ActiveRecord::Base
    	  @twitter_user.member = user
       @twitter_user.create_date = item.created_at
    	  @twitter_user.save
-      end
 	  end
   end	
 

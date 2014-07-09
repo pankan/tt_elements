@@ -1,37 +1,21 @@
-
 <div class="page-container">
-        <h1><%= image_tag("logo_white.png", class: "logo") %></h1>
-
-        <% if @user.gplus_id.blank? || @user.twitter_id.blank? %>        
-            <div class="notice">Hello <%= @user.username %>, You may connect your accounts now</div>
-            <div id="container">
-            <% if @user.twitter_id.blank? %>
-                <a href="/auth/twitter" class="tt twitter">
-                    Connect Twitter
-                    <span class="icons twitter"></span>
-                </a>
-            <% end %>
-
-            <% if @user.gplus_id.blank? %>
-                <a href="/auth/google_oauth2" class="tt gplus">
-                    Connect Google+
-                    <span class="icons gplus"></span>
-                </a>
-            <% end %>
-            <a href="/members/timeline">
-                <button>Sign me up</button>
-            <a>
-        
-        <% else %>
-            <div class="notice">Hello <%= @user.username %>,You have already connected your twitter and google plus accounts</div>
-            <a href="/members/timeline">
-               <button>View Timeline</button>
-            <a>
-        <% end %>
-
+  <h1><%= image_tag("logo_white.png", class: "logo") %></h1>
+  <div class="notice">Hello You may connect your accounts now</div>
+  <div id="container">
+    <a href="/auth/twitter" class="tt twitter">
+      Connect Twitter
+      <span class="icons twitter"></span>
+    </a>          
+    <a href="#" class="tt facebook">
+      Connect Facebook
+      <span class="icons facebook"></span>
+    </a>          
+    <a href="/auth/google_oauth2" class="tt gplus">
+      Connect Google+
+      <span class="icons gplus"></span>
+    </a>
+    <a href="/members/timeline">
+    <button>Sign me up</button>
+    <a>
+  </div>
 </div>
-
-<div class="signout">
- <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
-</div>
-
