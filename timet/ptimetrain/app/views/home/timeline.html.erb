@@ -9,9 +9,9 @@
  
 <div id="visualization"></div>
 <script type="text/javascript">
-  //render widget
+  //render gpost widget
   function renderpost(id) {
-    var p = document.getElementById(id);
+    var p = document.getElementById('id');
     if(p.style.display == 'block')
       p.style.display = 'none';
     else
@@ -20,10 +20,10 @@
 
   //html elements creation
   <% current_member.google_models.each do |post| %>
-    var item<%= post.id %> = '<a class="dotlabel" onclick="renderpost(\'<%= post.id %>\');">G</a>';
+    var item<%= post.id %> = '<a onclick="renderpost(wid-<%= post.id %>);"> </a>';
   <% end %>
   <% current_member.twitter_models.each do |post| %>
-    var item<%= post.id %> = '<a class="dotlabel" onclick="renderpost(\'<%= post.id %>\');">G</a>';
+    var item<%= post.id %> = '<a onclick="renderpost(wid-<%= post.id %>);"> </a>';
   <% end %>
  
  
@@ -32,14 +32,12 @@
  
   // Create a json evnt data set
   var items = new vis.DataSet([
-
-    <% @current_member.google_models.each do |post| %>
-    {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date %>', type: 'gpoint'},
+    <% current_member.google_models.each do |post| %>
+      {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date %>', type: 'gpoint'},
     <% end %>
-    <% @current_member.twitter_models.each do |post| %>
-    {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date.to_s[0...10]+ "T" + post.create_date.to_s[11...19] + "Z" %>', type: 'tpoint'},
+    <% current_member.twitter_models.each do |post| %>
+      {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date.to_s[0...10]+ "T" + post.create_date.to_s[11...19] + "Z" %>', type: 'tpoint'},
     <% end %>
-
   ]);
  
   // Create a Timeline
@@ -50,26 +48,23 @@
   document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
   document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
   document.getElementById('moveRight').onclick = function () { move(-0.2); };
-  document.getElementById('reset').onclick     = function () { <% GoogleModel.store_urls(current_member) %> ;
-                                                               <% TwiterModel.store_urls(current_member) %> ;
-                                                               window.location.reload(); };
+  document.getElementById('reset').onclick     = function () { window.location.reload(); };
 </script>
  
 <div class="widgets">
   <% current_member.twitter_models.each do |post| %>
-    <div class="wid-tweet" id="<%= post.id %>">
+    <div id="wid-<%= post.id %>">
       <blockquote class="twitter-tweet" width="350"><a href="<%= post.urls %>"></a></blockquote>
     </div>
   <% end %>
-  <div class="wid-post" id="widget-div"></div>
 
   <% current_member.google_models.each do |post| %>
-    <div class="wid-post" id="<%= post.id %>">
+    <div id="wid-<%= post.id %>">
       <div class="g-post" data-href="<%= post.urls %>"></div>
     </div>
   <% end %>
 </div>
 <div class="signout">
   <p>Hello <%= current_member.username %></p>
-  <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+  <%= link_to "Sign out", destroy_member_session_path, method: :delete %>
 </div>

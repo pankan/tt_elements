@@ -9,20 +9,10 @@
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
     </script>
     <script async src="https://platform.twitter.com/widgets.js"></script>
-    <script type="text/javascript">
-	    function hideWid() {
-	        <% current_member.google_models.each do |post| %>
-	        	document.getElementById('<%= post.id %>').style.display = 'none';
-	        <% end %>
-	        <% current_member.twitter_models.each do |post| %>
-	        	document.getElementById('<%= post.id %>').style.display = 'none';
-	        <% end %>
-	    }
-    </script>
-	<%= csrf_meta_tags %>
+	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<body onload="hideWid();">
+
 	<%= yield %>
 
 	</body>

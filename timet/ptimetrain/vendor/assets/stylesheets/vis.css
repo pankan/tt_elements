@@ -150,6 +150,12 @@
   padding: 5px;
 }
 
+.vis.timeline .item.point.selected,
+.vis.timeline .item.gpoint.selected,
+.vis.timeline .item.tpoint.selected,
+.vis.timeline .item.fpoint.selected {
+  background-color: #E5E5E5;
+}
 .vis.timeline .item.point  { color: #909090; }
 .vis.timeline .item.gpoint { color: #D34836; }
 .vis.timeline .item.tpoint { color: #4099FF; }
