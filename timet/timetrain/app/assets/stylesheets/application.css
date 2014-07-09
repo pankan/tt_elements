@@ -178,6 +178,18 @@ button:active {
     text-decoration: none;
     color: #fff;
 }
+.signout{
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0,0,0,.2);
+    font-size: 14px;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+}
+.signout a {
+    text-decoration: none;
+    color: #fff;
+}
 
 /**
  * Social Network login buttons
@@ -401,4 +413,7 @@ a.gplus:active {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: rgba(255,255,255,0.7);
+}
+.widgets{
+    width: 450px;
 }
