@@ -36,7 +36,9 @@
  
   // Create a json evnt data set
   var items = new vis.DataSet([
-    {id: 7, content: item8, start: '2014-06-20', type: 'tpoint'},
+    <% @current_member.twitter_models.each do |post| %>
+    {id: <%= post.member_id %>, content: <%= post.urls %>, start: '<%= post.create_date %>', type: 'tpoint'},
+    <% end %>
     {id: 8, content: item7, start: '2014-06-27', type: 'gpoint'},
   ]);
  
