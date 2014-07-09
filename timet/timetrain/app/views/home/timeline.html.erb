@@ -11,15 +11,15 @@
 <script type="text/javascript">
         //render gpost widget
       function renderpost() {
-      var p = document.getElementById('widget-post');
+      var p = document.getElementById('wid-post');
        if(p.style.display == 'block')
           p.style.display = 'none';
        else
           p.style.display = 'block';
      }
  
-     function rendertweet(id) {
-        var t = document.getElementById('id');
+     function rendertweet() {
+        var t = document.getElementById('wid-tweet');
        if(t.style.display == 'block')
           t.style.display = 'none';
        else
@@ -27,8 +27,12 @@
      }
  
       //html ele cre
-      var item7 = '<a onclick="renderpost();">post</a>';
-      var item8 = '<a onclick="rendertweet();">tweet</a>';
+      <% current_member.google_models.each do |post| %>
+        var item<%= post.id %> = '<a onclick="renderpost();"> </a>';
+      <% end %>
+      <% current_member.twitter_models.each do |post| %>
+        var item<%= post.id %> = '<a onclick="rendertweet();"> </a>';
+      <% end %>
  
  
   // DOM element where the Timeline will be attached
@@ -37,10 +41,10 @@
   // Create a json evnt data set
   var items = new vis.DataSet([
     <% current_member.google_models.each do |post| %>
-    {id: <%= post.id %>, content: "<a onclick='renderpost();'> </a>", start: '<%= post.create_date %>', type: 'gpoint'},
+    {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date %>', type: 'gpoint'},
     <% end %>
     <% current_member.twitter_models.each do |post| %>
-    {id: <%= post.id+10 %>, content: "<a onclick='rendertweet(<%= post.id %>);'> </a>", start: '2014-06-30T05:10:56.080Z', type: 'tpoint'},
+    {id: <%= post.id %>, content: item<%= post.id %>, start: '<%= post.create_date.to_s[0...10]+ "T" + post.create_date.to_s[11...19] + "Z" %>', type: 'tpoint'},
     <% end %>
   ]);
  
@@ -58,17 +62,17 @@
  
 <div class="widgets">
   <% current_member.twitter_models.each do |post| %>
-  <div id="<%= post.id %>">
+  <div id="wid-tweet">
     <blockquote class="twitter-tweet" width="350"><a href="<%= post.urls %>"></a></blockquote>
   </div>
   <% end %>
 
   <% current_member.google_models.each do |post| %>
-  <div id="<%= post.id %>">
+  <div id="wid-post">
     <div class="g-post" data-href="<%= post.urls %>"></div>
   </div>
   <% end %>
 </div>
-<div class="signup">
+<div class="signout">
   <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
 </div>
