@@ -6,7 +6,7 @@
       <% if @user.twitter_id.blank? || @user.gplus_id.blank? %>
         You may connect your accounts now
       <% else %>
-        You can now complete sign up
+        You can now continue to timetrain.
       <% end %>
     </div></br>    
     <% if @user.twitter_id.blank? %>
@@ -36,7 +36,7 @@
       <button disabled>Complete sign up</button>
     <% else %>
       <a href="/members/timeline">
-      <button>Complete sign up</button>
+      <button>Continue</button>
       </a>
     <% end %>
   </div>
