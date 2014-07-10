@@ -33,6 +33,12 @@ img.big_logo{
     width: 50%;
 }
 
+img.prof_img{
+    background: url('prof_image.png');
+    width: 50px;
+    height: 50px;
+}
+
 h1 {
     font-size: 30px;
     font-weight: 700;
@@ -460,4 +466,41 @@ a.twitterx, a.gplusx {
     left: 0;
     top: -3px;
     z-index: 100;
+}
+
+ul {
+  text-align: right;
+  display: inline;
+  margin: 0 0 0 0;
+  list-style: none;
+}
+ul li {
+  display: inline-block;
+  position: relative;
+  width: 90px;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+ul li:hover {
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+
+}
+ul li ul li { 
+  font-weight: normal;
+  background: rgba(255,255,255,0.4); 
+  display: block; 
+  color: #fff;
+}
+ul li ul li:hover { background: rgba(255,255,255,0.6); }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }

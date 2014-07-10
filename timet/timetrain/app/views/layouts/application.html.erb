@@ -26,12 +26,17 @@
     </p>
   </div>
   <% if current_member %>
-   <div class="signout">
-  <p>
-    <%= image_tag(current_member.img_url) %>
-    <%= current_member.username %>
-  </p>
-    <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
-  </div>
+    <div class="signout">
+        <ul>
+          <li>
+            <%= image_tag(current_member.img_url, class: "prof_img") %>
+            <ul>
+              <li><%= current_member.username %></li>
+              <li><%= link_to "Social sign up", members_social_sign_up_path, :method => :get %></li>
+              <li><%= link_to "Sign out", destroy_member_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
   <% end %>
 </html>
