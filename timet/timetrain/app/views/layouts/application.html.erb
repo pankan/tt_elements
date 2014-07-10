@@ -27,7 +27,9 @@
   </div>
   <% if current_member %>
    <div class="signout">
-    <p>Hello <%= current_member.username %></p>
+  <p>
+    <%= image_tag(current_member.img_url) %>
+  </p>
     <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
   </div>
   <% end %>

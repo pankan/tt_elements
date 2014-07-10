@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709084549) do
+ActiveRecord::Schema.define(version: 20140710081641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,10 +52,18 @@ ActiveRecord::Schema.define(version: 20140709084549) do
     t.string   "twitter_token"
     t.string   "twitter_secret"
     t.string   "gplus_token"
+    t.string   "img_url"
   end
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
+
+  create_table "twiiters", force: true do |t|
+    t.string   "urls"
+    t.datetime "create_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "twitter_models", force: true do |t|
     t.string   "urls"
