@@ -29,6 +29,7 @@
    <div class="signout">
   <p>
     <%= image_tag(current_member.img_url) %>
+    <%= current_member.username %>
   </p>
     <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
   </div>
