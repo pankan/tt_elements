@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root "home#index" 
   get '/members/social_sign_up' => 'members#social_sign_up'
   get '/members/timeline' => 'home#timeline'
+  get '/members/update_timeline' => 'home#update_timeline'
   get '/auth/twitter/callback' => 'home#connect_twitter'
   get '/auth/google_oauth2/callback' => 'home#connect_gplus'
 

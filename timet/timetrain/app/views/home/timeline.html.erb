@@ -17,7 +17,9 @@
     <input type="button" id="zoomOut" title="Zoom out"/>
     <input type="button" id="moveLeft" title="Move left"/>
     <input type="button" id="moveRight" title="Move right"/>
-    <input type="button" id="reset" title="Refresh timeline"/>
+    <a href="/members/update_timeline">
+      <input type="button" id="reset" title="Refresh timeline"/>
+    </a>
   </div>
    
   <div id="visualization"></div>
@@ -65,8 +67,7 @@
     document.getElementById('zoomOut').onclick   = function () { zoom( 0.2); };
     document.getElementById('moveLeft').onclick  = function () { move( 0.2); };
     document.getElementById('moveRight').onclick = function () { move(-0.2); };
-    document.getElementById('reset').onclick     = function () { <% TwitterModel.store_urls(current_member) %>
-                                                                 <% GoogleModel.store_urls(current_member)  %> window.location.reload(true); };
+
   </script>
    
   <div class="widgets">

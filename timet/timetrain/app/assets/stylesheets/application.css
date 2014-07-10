@@ -129,6 +129,13 @@ button:active {
 
     border: 0px solid #ef4300;
 }
+button:disabled{
+    pointer-events: none;
+    cursor: default;
+    background: #9e9e9e;
+    color: #7c7c7c;
+    border: 1px solid #7c7c7c;
+}
 
 .error, .valid {
     display: none;
@@ -227,7 +234,7 @@ a.tt  {
 /**
  * Twitter
  */
-a.twitter {
+a.twitter, a.twitterx {
     background: #4099FF;
     background: -webkit-gradient(linear, 0 0, 0 0, from(#4099FF), to(#4586ae));
     background: -moz-linear-gradient(#4099FF, #4586ae);
@@ -259,7 +266,7 @@ a.facebook:active {
 /**
  * Google+
  */
-a.gplus {
+a.gplus, a.gplusx {
     background: #D34836;
     background: -webkit-gradient(linear, 0 0, 0 0, from(#D34836), to(#7F2B20));
     background: -moz-linear-gradient(#D34836, #7F2B20);
@@ -271,6 +278,16 @@ a.gplus:active {
     background: -webkit-gradient(linear, 0 0, 0 0, from(#7F2B20), to(#D34836));
     background: -moz-linear-gradient(#7F2B20, #D34836);
     background: linear-gradient(#7F2B20, #D34836); }
+
+/**
+ *Disabled buttons
+ */
+a.twitterx, a.gplusx {
+    pointer-events: none;
+    cursor: default; }
+
+
+
 /**
  * icons
  */

@@ -1,8 +1,14 @@
 class HomeController < ApplicationController
 
   def timeline
- 
     @member = current_member
+    
+  end
+
+  def update_timeline
+
+        Member.update_records(current_member)
+        redirect_to members_timeline_path
     
   end
 	
