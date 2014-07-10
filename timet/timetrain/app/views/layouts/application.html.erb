@@ -9,8 +9,7 @@
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
     </script>
     <script async src="https://platform.twitter.com/widgets.js"></script>
-    <% GoogleModel.store_urls(current_member) %>
-    <% TwitterModel.store_urls(current_member) %>
+
 	<%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -26,4 +25,10 @@
       <a href="#">Help</a>
     </p>
   </div>
+  <% if current_member %>
+   <div class="signout">
+    <p>Hello <%= current_member.username %></p>
+    <%= link_to "Sign out", destroy_member_session_path, :method => :delete %>
+  </div>
+  <% end %>
 </html>

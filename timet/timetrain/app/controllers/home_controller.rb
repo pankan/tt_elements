@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def timeline
+ 
     @member = current_member
     
   end

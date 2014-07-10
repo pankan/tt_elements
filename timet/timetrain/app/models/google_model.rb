@@ -14,7 +14,7 @@ class GoogleModel < ActiveRecord::Base
 	  	@gplus_user.save
  	end
  
-
+ 	
   end
 
 
