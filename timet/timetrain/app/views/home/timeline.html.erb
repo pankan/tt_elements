@@ -10,6 +10,12 @@
         document.getElementById('<%= post.id %>').style.display = 'none';
       <% end %>
     }
+    window.document.onkeydown = function (e)
+      {
+        if (!e) e = event;
+        if (e.keyCode == 27)
+          hideWid();
+      }
   </script>
   <%= image_tag("logo_white.png", class: "logo") %>
   <div class="menu">
