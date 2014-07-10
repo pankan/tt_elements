@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource) 
-  	 GoogleModel.store_urls(current_member) 
-     TwitterModel.store_urls(current_member) 
+  	
   	members_timeline_path
   end
 

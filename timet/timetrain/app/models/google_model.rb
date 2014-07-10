@@ -7,16 +7,11 @@ class GoogleModel < ActiveRecord::Base
 	gplus_activity = person.list_activities
 	user.google_models.delete_all unless user.google_models.last.blank? 
 	gplus_activity.each do |item|
-	  	@gplus_user = GoogleModel.new  			
-	  	@gplus_user.member = user
-	  	@gplus_user.urls = item.url.to_s
-	  	@gplus_user.create_date = item.published
-	  	@gplus_user.save
+	  @gplus_user = GoogleModel.new  			
+	  @gplus_user.member = user
+	  @gplus_user.urls = item.url.to_s
+	  @gplus_user.create_date = item.published
+	  @gplus_user.save
  	end
- 
- 	
   end
-
-
-
 end

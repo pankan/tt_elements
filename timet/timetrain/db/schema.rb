@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710081641) do
+ActiveRecord::Schema.define(version: 20140710101259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20140710081641) do
     t.string   "twitter_secret"
     t.string   "gplus_token"
     t.string   "img_url"
+    t.string   "gplus_refresh_token"
+    t.string   "gplus_token_expires_at"
   end
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
